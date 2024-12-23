@@ -1,0 +1,57 @@
+﻿<Window x:Class="WpfApp1.Prosmotr"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Prosmotr" Height="950" Width="1400"  WindowStyle="None" ResizeMode="CanResizeWithGrip" AllowsTransparency="True" Background="#afb4ff">
+
+    <DockPanel DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Mode=Self}}">
+        <StackPanel Orientation="Horizontal"  DockPanel.Dock="Top"  Margin="4 20 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" >
+            <Button Width="150" Background="#7842E8" Content="Печать" Foreground="White" Click="Button_Click_6" FontSize="24" Height="39"/>
+            <Label></Label>
+            <Button Width="150" Background="#7842E8" Content="Назад" Foreground="White" Click="Button_Click" FontSize="24" Height="39"/>
+        </StackPanel>
+
+        <Border Background="White" Width="1300" Height="900" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="100" Color="#800080" ShadowDepth="1"/>
+            </Border.Effect>
+
+            <ListView Grid.Row="1" Name="Live" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="30" Width="auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="580"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding Imagge}" Width="500" Height="500" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 0"/>
+                            <TextBlock Text="{Binding Adreess, StringFormat={}{0} - Адрес}" VerticalAlignment="Top" TextAlignment="Center" Width="350"
+                           TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="26" Grid.Row="0"/>
+                            <TextBlock Text="{Binding Price, StringFormat={}{0:0} рублей}" Grid.Row="2" Margin="5 5 5 15" FontSize="26" HorizontalAlignment="Center" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Metr, StringFormat={}{0} - Квадратных метров}" Grid.Row="3" FontSize="14"  HorizontalAlignment="Right"/>
+                            <TextBlock Text="{Binding Ittag , StringFormat={}{0} - Этаж}" Grid.Row="3" FontSize="14"  HorizontalAlignment="Left"/>
+                            <TextBlock Text="{Binding FlootKom, StringFormat={}{0} - Количество комнат}" Grid.Row="3" VerticalAlignment="Center" FontSize="16" TextAlignment="Center" Width="390" Margin="0 0 50 0"/>
+                            <TextBlock Text="{Binding MictoRoiin, StringFormat={}{0} - район}" Grid.Row="4" VerticalAlignment="Center" FontSize="16" TextAlignment="Center" Width="390" Margin="0 0 50 0"/>
+                            <TextBlock Text="{Binding Remont, StringFormat={}{0} - ремонт}" Grid.Row="5" VerticalAlignment="Center" FontSize="16" TextAlignment="Center" Width="390" Margin="0 0 50 0"/>
+                            <TextBlock Text="{Binding SrokVladenia, StringFormat={}{0} - срок владения}" Grid.Row="6" VerticalAlignment="Center" FontSize="16" TextAlignment="Center" Width="390" Margin="0 0 50 0"/>
+                            <TextBlock Text="{Binding Opisaninie, StringFormat={}{0} - описание}" Grid.Row="7" VerticalAlignment="Center" FontSize="16" TextAlignment="Right" Width="890" Margin="0 0 50 0"/>
+                            <Button Grid.Row="8" Margin="0 20 50 0" Background="#7842E8" Content="Карта" Click="Button_Click_1"></Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Border>
+    </DockPanel>
+</Window>

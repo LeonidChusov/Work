@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfApp1.UserBaza"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        d:DesignHeight="550" d:DesignWidth="300"
+        Title="User" Width="500" Height="500" WindowStyle="None" ResizeMode="CanResizeWithGrip" AllowsTransparency="True" Background="#afb4ff">
+
+    <DockPanel DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Mode=Self}}">
+        <StackPanel Margin="4 0 0 0" Orientation="Vertical" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border Background="White" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" CornerRadius="15">
+                <Label Content="Добовление клиента" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" />
+            </Border>
+            <Label Width="81"/>
+            <Button Width="109" Background="#7842E8" Content="Сохранить" Foreground="White" Click="Button_Click_1" />
+            <Label/>
+            <Button Width="81" Background="#7842E8" Content="Назад" Foreground="White" Click="Button_Click"/>
+        </StackPanel>
+        <Border Background="White" Width="210" Height="312" CornerRadius="15">
+            <ListView>
+                <TextBox x:Name="fioText" Width="170" materialDesign:HintAssist.Hint="ФИО"/>
+                <TextBox x:Name="datarogdText" Width="170" materialDesign:HintAssist.Hint="Дата рождения"/>
+                <TextBox x:Name="seriaText" Width="170" materialDesign:HintAssist.Hint="серия и номер паспорта"/>
+                <TextBox x:Name="kemvidanText" Width="170" materialDesign:HintAssist.Hint="Кем выдан"/>
+                <TextBox x:Name="adresregText" Width="170" materialDesign:HintAssist.Hint="Адрес регистрации"/>
+                <TextBox x:Name="adresnewText" Width="170" materialDesign:HintAssist.Hint="Адрес на данный момент"/>
+                <TextBox x:Name="telefonText" Width="170" materialDesign:HintAssist.Hint="Номер телефона"/>
+            </ListView>
+        </Border>
+    </DockPanel>
+</Window>

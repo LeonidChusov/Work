@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="image\10.jpg" />
+    <None Remove="image\11.jpg" />
+    <None Remove="image\12.jpg" />
+    <None Remove="image\2.jpg" />
+    <None Remove="image\3.jpg" />
+    <None Remove="image\4.jpg" />
+    <None Remove="image\5.jpg" />
+    <None Remove="image\6.jpg" />
+    <None Remove="image\7.jpg" />
+    <None Remove="image\8.jpg" />
+    <None Remove="image\9.jpg" />
+    <None Remove="image\da.jpg" />
+    <None Remove="image\fons.png" />
+    <None Remove="image\moskva.png" />
+    <None Remove="image\room1.jpg" />
+    <None Remove="image\room2.jpg" />
+    <None Remove="image\room3.jpg" />
+    <None Remove="image\room4.jpg" />
+    <None Remove="image\room5.jpg" />
+    <None Remove="image\room6.jpg" />
+    <None Remove="image\room7.jpg" />
+    <None Remove="image\room8.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GMap.NET.WinPresentation" Version="2.1.7" />
+    <PackageReference Include="GSF.Core" Version="2.4.28" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.0.0-ci368" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="image\10.jpg" />
+    <Resource Include="image\11.jpg" />
+    <Resource Include="image\12.jpg" />
+    <Resource Include="image\2.jpg" />
+    <Resource Include="image\3.jpg" />
+    <Resource Include="image\4.jpg" />
+    <Resource Include="image\5.jpg" />
+    <Resource Include="image\6.jpg" />
+    <Resource Include="image\7.jpg" />
+    <Resource Include="image\8.jpg" />
+    <Resource Include="image\9.jpg" />
+    <Resource Include="image\da.jpg" />
+    <Resource Include="image\fons.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="image\moskva.png" />
+    <Resource Include="image\room1.jpg" />
+    <Resource Include="image\room2.jpg" />
+    <Resource Include="image\room3.jpg" />
+    <Resource Include="image\room4.jpg" />
+    <Resource Include="image\room5.jpg" />
+    <Resource Include="image\room6.jpg" />
+    <Resource Include="image\room7.jpg" />
+    <Resource Include="image\room8.jpg" />
+  </ItemGroup>
+
+</Project>

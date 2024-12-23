@@ -1,0 +1,62 @@
+﻿<Window x:Class="WpfApp1.Kalkulator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Kalkulator" Height="450" Width="500">
+
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="border" CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
+                            <Grid Margin="10,0">
+                                <TextBlock x:Name="watermark" VerticalAlignment="Center" Visibility="Collapsed" FontSize="{TemplateBinding FontSize}" Opacity="0.4" Text="{TemplateBinding Tag}"></TextBlock>
+                                <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center"></ScrollViewer>
+                                <Rectangle x:Name="rect" Fill="Transparent" Height="2" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="0,3"></Rectangle>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="GotFocus">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Width" AutoReverse="True" From="250" To="255" Duration="0:0:0.15" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase ></CubicEase>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetProperty="Height" AutoReverse="True" From="40" To="45" Duration="0:0:0.15" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase ></CubicEase>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter TargetName="rect" Property="Fill" Value="{Binding ElementName=border, Path=BorderBrush}"></Setter>
+                            </Trigger>
+                            <Trigger Property="Text" Value="">
+                                <Setter TargetName="watermark" Property="Visibility" Value="Visible"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#afb4ff">
+        <TextBox x:Name="sum" HorizontalAlignment="Left" Margin="10,119,0,0" TextWrapping="Wrap" Tag="Сумма (руб.)" materialDesign:HintAssist.Hint="Сумма (руб.)" VerticalAlignment="Top" Width="120" Height="20"/>
+        <TextBox x:Name="sroki" HorizontalAlignment="Center" Margin="0,119,0,0" TextWrapping="Wrap" Tag="Срок (лет)" materialDesign:HintAssist.Hint="Срок (лет)" VerticalAlignment="Top" Width="120" Height="20"/>
+        <TextBox x:Name="stavkaki" HorizontalAlignment="Left" Margin="370,119,0,0" TextWrapping="Wrap" Tag="Ставка (%)" materialDesign:HintAssist.Hint="Ставка (%)" VerticalAlignment="Top" Width="120" Height="20"/>
+        <Button Content="Рассчитать" Background="#7842E8" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
+        <TextBox x:Name="platatka" HorizontalAlignment="Center" Margin="0,285,0,0" TextWrapping="Wrap" Tag="Плата (руб .)" materialDesign:HintAssist.Hint="Плата (руб .)" VerticalAlignment="Top" Width="120" Height="20"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Background="#7842E8" Margin="370,356,0,0" VerticalAlignment="Top" Click="Button_Click_1" Width="91"/>
+        <Label Content="Ипотечный калькулятор" FontSize="26" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
